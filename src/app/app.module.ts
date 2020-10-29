@@ -3,14 +3,21 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+export function init_app(appLoadService: AppInitService) {
+  return () => appLoadService.init();
+}
 @NgModule({
-  declarations: [
-    AppComponent
+  declarations: [AppComponent, ComponentAComponent, ComponentBComponent],
+  imports: [BrowserModule, CoreModule, HttpClientModule],
+  providers: [
+    AppInitService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: init_app,
+      deps: [AppInitService],
+      multi: true
+    }
   ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
