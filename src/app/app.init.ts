@@ -20,4 +20,3 @@ export class AppInitService {
       })).toPromise();
   }
 }
-view raw

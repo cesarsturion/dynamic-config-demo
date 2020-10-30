@@ -1,7 +1,8 @@
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
+import { AppInitService } from './app.init';
+import {HttpClientModule} from '@angular/common/http';
 
 export function init_app(appLoadService: AppInitService) {
   return () => appLoadService.init();
