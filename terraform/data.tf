@@ -1,5 +1,3 @@
-data "azurerm_client_config" "current" {}
-
 // Get Keyvault Data
 data "azurerm_resource_group" "ops" {
   name = var.resource-group-ops
@@ -8,7 +6,6 @@ data "azurerm_resource_group" "ops" {
 data "azurerm_key_vault" "keyvault" {
   name                = var.keyvaul-name
   resource_group_name = data.azurerm_resource_group.ops.name
-  tenant_id = data.azurerm_client_config.current.tenant_id
 }
 
 data "azurerm_key_vault_secret" "dbpass-secret" {
