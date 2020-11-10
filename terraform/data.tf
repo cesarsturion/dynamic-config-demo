@@ -13,7 +13,3 @@ data "azurerm_key_vault_secret" "dbpass-secret" {
   key_vault_id = data.azurerm_key_vault.keyvault.id
 }
 
-data "azurerm_key_vault_secret" "backend" {
-  name         = "KeyBackend"
-  key_vault_id = data.azurerm_key_vault.keyvault.id
-}
