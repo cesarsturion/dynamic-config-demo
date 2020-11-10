@@ -8,7 +8,7 @@ variable "resource-group-ops" {
 variable "keyvaul-name" {
   type        = string
   description = "Name of key vault"
-  default     = "gudiaolabsKeysVault"
+  default     = "gudiaolabskeys"
 }
 
 variable "key-backend" {
