@@ -9,7 +9,7 @@ data "azurerm_key_vault" "keyvault" {
 }
 
 data "azurerm_key_vault_secret" "dbpass-secret" {
-  name         = "DBPassword${var.environment[terraform.workspace]}"
+  name         = "dbpassword${var.environment[terraform.workspace]}"
   key_vault_id = data.azurerm_key_vault.keyvault.id
 }
 
